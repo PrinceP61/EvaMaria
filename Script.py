@@ -1,21 +1,14 @@
 class script(object):
-    START_TXT = """Hello {},
-My Name Is <a href=https://t.me/{}>{}</a>, I Can Provide You Movies, Just Add Me To Your Group and Enjoy"""
-    HELP_TXT = """Hey {}
-Here Is The Help For My Commands."""
-    ABOUT_TXT = """✯ My Name: {}
-✯ Crator: <a href=https://t.me/TeamEvamaria>Team Eva Maria</a>
-✯ Library: Pyrogram
-✯ Language: Pythons 𝟹
-✯ Data Base: Mongo Db
-✯ Bot Server: Heroku
-✯ Build Status: v1.0.1 [ Beta ]"""
-    SOURCE_TXT = """<b>NOTE:</b>
-- Eva Maria is a open source project. 
-- Source - https://github.com/EvamariaTG/EvaMaria  
+    START_TXT = """Hᴇʟʟᴏ 👋🙂 {},
+My Name Is <a href=https://t.me/{}>{}</a>, ਮੈਂ ਤੁਹਾਨੂੰ ਫਿਲਮਾਂ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦਾ ਹਾਂ, ਬੱਸ ਮੈਨੂੰ ਆਪਣੇ ਗਰੁੱਪ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ ਅਤੇ ਮੇਰਾ ਫਾਇਦਾ ਲਓ 😍
 
-<b>DEVS:</b>
-- <a href=https://t.me/TeamEvamaria>Team Eva Maria</a>"""
+I Cᴀɴ Pʀᴏᴠɪᴅᴇ Yᴏᴜ ᴍᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ​ 😍"""
+    HELP_TXT = """Hey {}
+
+ਇੱਥੇ ਮੇਰੇ ਹੁਕਮਾਂ ਲਈ ਮਦਦ.
+Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs."""
+    ABOUT_TXT = """⌁ Mʏ Nᴀᴍᴇ​ (ਮੇਰਾ ਨਾਮ): {}
+⌁ Cʀᴇᴀᴛᴏʀ​ (ਮੈਨੂੰ ਬਨਾਉਣ ਵਾਲਾ): <a href=https://t.me/pb_cinemaxpro>Punjabi CinemaXPro</a>"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
