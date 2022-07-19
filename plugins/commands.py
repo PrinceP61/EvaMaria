@@ -89,7 +89,7 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs​ 🎥', url='https://t.me/pb_cinemaxpro')
             ],[
-            InlineKeyboardButton(ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ᴏᴘᴛɪᴏɴs​ 😉', callback_data='help'),           
+            InlineKeyboardButton(ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ᴏᴘᴛɪᴏɴs​ 😉', callback_data='help')           
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
