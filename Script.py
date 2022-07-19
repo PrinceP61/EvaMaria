@@ -96,11 +96,11 @@ This module only works for my admins
 <b>🗄ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ​</b>: <b>{}</b> Mib
 <b>🗃ꜰʀᴇᴇ sᴛᴏʀᴀɢᴇ</b>​: <b>{}</b> Mib"""
     LOG_TEXT_G = """#NewGroup
-Group = {}(<code>{}</code>)
-Total Members = <code>{}</code>
-Added By - {}
+<b>ɢʀᴏᴜᴘ​​</b> = {}(<code>{}</code>)
+<b>ᴛᴏᴛᴀʟ​ ᴍᴇᴍʙᴇʀs​​</b> = <code>{}</code>
+<b>ᴀᴅᴅᴇᴅ ʙʏ​​</b> - {}
 """
     LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Name - {}
+<b>ɪᴅ​<b> - <code>{}</code>
+<b>ɴᴀᴍᴇ​</b> - <b>{}</b>
 """
