@@ -452,7 +452,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-       elif query.data == "help3":
+
+    elif query.data =="help3":
         buttons = [[
             InlineKeyboardButton('Info👀', callback_data='about')
         ],[
@@ -469,7 +470,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-       elif query.data == "others":
+
+    elif query.data == "others":
         buttons = [[           
             InlineKeyboardButton('Back', callback_data='help3'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
@@ -480,7 +482,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-       elif query.data == "manuelfilter":
+
+    elif query.data == "manuelfilter":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('⏹️ Buttons', callback_data='button')
