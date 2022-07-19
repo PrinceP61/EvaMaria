@@ -90,11 +90,11 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
-    STATUS_TXT = """★ Total Files: <code>{}</code>
-★ Total Users: <code>{}</code>
-★ Total  Chats: <code>{}</code>
-★ Used Storage: <code>{}</code> Mib
-★ Free Storage: <code>{}</code> Mib"""
+    STATUS_TXT = """📂ᴛᴏᴛᴀʟ ꜰɪʟᴇs​: <code>{}</code>
+👤ᴜsᴇʀs: <code>{}</code>
+👥ɢʀᴏᴜᴘs: <code>{}</code>
+🗄ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ​: <code>{}</code> Mib
+🗃ꜰʀᴇᴇ sᴛᴏʀᴀɢᴇ​: <code>{}</code> Mib"""
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
