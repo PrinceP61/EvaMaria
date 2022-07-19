@@ -473,7 +473,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "others":
         buttons = [[           
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('Back', callback_data='help3'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -482,13 +482,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "source":
+    elif query.data == "imdb":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.SOURCE_TXT,
+            text=script.IMDB_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
