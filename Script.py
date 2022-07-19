@@ -11,7 +11,7 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs."""
 <b>♯ Mʏ Nᴀᴍᴇ​</b>: {}
 <b>♯Sᴘᴏɴsᴏʀᴇᴅ Bʏ​</b>: <a href=https://t.me/pb_cinemaxpro><b>Pᴜɴᴊᴀʙɪ CɪɴᴇᴍᴀXᴘʀᴏ​</b></a>"""
 
-    IMDB_TXT = """<b>IMDB</b>
+    IMDBB_TXT = """<b>IMDB</b>
 
 <b>IMDB ਤੋਂ ਫਿਲਮ ਦੀ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰੋ।</b>
 <b>(Gᴇᴛ Tʜᴇ Fɪʟᴍ Iɴꜰᴏʀᴍᴀᴛɪᴏɴ Fʀᴏᴍ IMDB sᴏᴜʀᴄᴇ.​)</b>
