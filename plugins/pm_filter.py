@@ -521,14 +521,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "extra":
+    elif query.data == "imdb":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.EXTRAMOD_TXT,
+            text=script.IMDB_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
