@@ -425,11 +425,32 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Auto', callback_data='autofilter')
         ], [
             InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Admin', callback_data='Admin')
+            InlineKeyboardButton('Admin', callback_data='admin')
         ], [ 
-            InlineKeyboardButton('☚', callback_data='3rd'),
+            InlineKeyboardButton('☚', callback_data='Help3'),
             InlineKeyboardButton(' 🔐 Close', callback_data='close_data'),
-            InlineKeyboardButton('☛', callback_data='2nd')
+            InlineKeyboardButton('☛', callback_data='help2')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+
+    elif query.data == "help2":
+        buttons = [[
+            InlineKeyboardButton('Info👀', callback_data='about')
+        ],[
+            InlineKeyboardButton('IMDB', callback_data='imdb'),
+            InlineKeyboardButton('Search', callback_data='search')
+        ], [
+            InlineKeyboardButton('ID', callback_data='id'),
+            InlineKeyboardButton('Info', callback_data='info')
+        ], [ 
+            InlineKeyboardButton('☚', callback_data='help'),
+            InlineKeyboardButton(' 🔐 Close', callback_data='close_data'),
+            InlineKeyboardButton('☛', callback_data='help3')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
