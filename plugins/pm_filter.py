@@ -223,8 +223,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f"Group Name : **{title}**\nGroup ID : `{group_id}`",
             reply_markup=keyboard,
             parse_mode="md"
-        )
-        return await query.answer('Piracy Is Crime')
+        )       
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -244,8 +243,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode="md"
             )
         else:
-            await query.message.edit_text('Some error occurred!!', parse_mode="md")
-        return await query.answer('Piracy Is Crime')
+            await query.message.edit_text('Some error occurred!!', parse_mode="md")       
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -267,8 +265,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 f"Some error occurred!!",
                 parse_mode="md"
-            )
-        return await query.answer('Piracy Is Crime')
+            )       
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -285,8 +282,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 f"Some error occurred!!",
                 parse_mode="md"
-            )
-        return await query.answer('Piracy Is Crime')
+            )       
     elif query.data == "backcb":
         await query.answer()
 
@@ -296,8 +292,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if groupids is None:
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
-            )
-            return await query.answer('Piracy Is Crime')
+            )           
         buttons = []
         for groupid in groupids:
             try:
@@ -476,14 +471,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
 
-    elif query.data == "about":
+    elif query.data == "others":
         buttons = [[           
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+            text=script.OTHERS_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
