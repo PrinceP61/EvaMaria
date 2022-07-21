@@ -376,7 +376,7 @@ async def settings(client, message):
                 await message.reply_text("<b>ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴘʀᴇsᴇɴᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ!!​</b>", quote=True)
                 return
         else:
-            await message.reply_text("<b> ɪ'ᴍ ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ᴀɴʏ ɢʀᴏᴜᴘs!​ ⇺☹</b>"", quote=True)
+            await message.reply_text("<b> ɪ'ᴍ ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ᴀɴʏ ɢʀᴏᴜᴘs!​ ⇺☹</b>", quote=True)
             return
 
     elif chat_type in ["group", "supergroup"]:
