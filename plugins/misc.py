@@ -20,27 +20,27 @@ async def showid(client, message):
         username = message.from_user.username
         dc_id = message.from_user.dc_id or ""
         await message.reply_text(
-            f"<b>➲ First Name:</b> {first}\n<b>➲ Last Name:</b> {last}\n<b>➲ Username:</b> {username}\n<b>➲ Telegram ID:</b> <code>{user_id}</code>\n<b>➲ Data Centre:</b> <code>{dc_id}</code>",
+            f"<b>♯ꜰɪʀꜱᴛ ɴᴀᴍᴇ:</b> {first}\n<b>♯ʟᴀꜱᴛ ɴᴀᴍᴇ:</b> {last}\n<b>♯ᴜꜱᴇʀ ɴᴀᴍᴇ:</b> {username}\n<b>♯ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ:</b> <code>{user_id}</code>\n<b>♯ᴅᴀᴛᴀ ᴄᴇɴᴛʀᴇ:</b> <code>{dc_id}</code>",
             quote=True
         )
 
     elif chat_type in ["group", "supergroup"]:
         _id = ""
         _id += (
-            "<b>➲ Chat ID</b>: "
+            "<b>♯ᴄʜᴀᴛ ɪᴅ</b>: "
             f"<code>{message.chat.id}</code>\n"
         )
         if message.reply_to_message:
             _id += (
-                "<b>➲ User ID</b>: "
+                "<b>♯ᴜꜱᴇʀ ɪᴅ</b>: "
                 f"<code>{message.from_user.id if message.from_user else 'Anonymous'}</code>\n"
-                "<b>➲ Replied User ID</b>: "
+                "<b>♯ʀᴇᴘʟɪᴇᴅ ᴜꜱᴇʀ ɪᴅ</b>: "
                 f"<code>{message.reply_to_message.from_user.id if message.reply_to_message.from_user else 'Anonymous'}</code>\n"
             )
             file_info = get_file_id(message.reply_to_message)
         else:
             _id += (
-                "<b>➲ User ID</b>: "
+                "<b>♯ᴜꜱᴇʀ ɪᴅ</b>: "
                 f"<code>{message.from_user.id if message.from_user else 'Anonymous'}</code>\n"
             )
             file_info = get_file_id(message)
@@ -58,10 +58,10 @@ async def showid(client, message):
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
-        "`Fetching user info...`"
+        "`ꜰᴇᴛᴄʜɪɴɢ ᴜꜱᴇʀ ɪɴꜰᴏ.….`"
     )
     await status_message.edit(
-        "`Processing user info...`"
+        "`ᴘʀᴏᴄᴇꜱꜱɪɴɢ ᴜꜱᴇʀ ɪɴꜰᴏ.….`"
     )
     from_user = None
     from_user_id, _ = extract_user(message)
@@ -74,7 +74,7 @@ async def who_is(client, message):
         return await status_message.edit("no valid user_id / message specified")
     message_out_str = ""
     message_out_str += f"<b>♯ꜰɪʀꜱᴛ ɴᴀᴍᴇ:</b> {from_user.first_name}\n"
-    last_name = from_user.last_name or "<b>None</b>"
+    last_name = from_user.last_name or "<b>ɴᴏɴᴇ</b>"
     message_out_str += f"<b>♯ʟᴀꜱᴛ ɴᴀᴍᴇ:</b> {last_name}\n"
     message_out_str += f"<b>♯ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ:</b> <code>{from_user.id}</code>\n"
     username = from_user.username or "<b>ɴᴏɴᴇ</b>"
@@ -194,7 +194,7 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
             **locals()
         )
     else:
-        caption = "No Results"
+        caption = "ɴᴏ ʀᴇꜱᴜʟᴛꜱ"
     if imdb.get('poster'):
         try:
             await quer_y.message.reply_photo(photo=imdb['poster'], caption=caption, reply_markup=InlineKeyboardMarkup(btn))
