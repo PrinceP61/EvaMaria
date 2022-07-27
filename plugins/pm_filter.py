@@ -374,29 +374,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ms = await client.send_cached_media(
                         chat_id=CH_FILTER,
                         file_id=file_id,
-                        caption=f'<b>🤠 𝗛𝗶 {query.from_user.mention}</b>\n\n<b>🔖 𝗡𝗔𝗠𝗘 :</b><code> {title}</code>\n\n<b>💾 𝗦𝗜𝗭𝗘 :</b> {size}\n\n<i>❕Note : Due to copyright issues the file will be deleted in 5 Minutes. make sure to forward the file to your SAVED MESSAGES</i>\n\n<b>╭─── • ❰ 𝗝𝗢𝗜𝗡  𝗛𝗘𝗥𝗘 ❱ • ──➣\n┣ @HYBRID_Movies\n╰───── • ◆ • ──────➣</b>',
+                        caption=f'<b> ʜɪ👋🙂 {query.from_user.mention}</b>\n\n<b>🔖 ɴᴀᴍᴇ:</b> {title}\n\n<b>💾 sɪᴢᴇ:</b> {size}\n\n<i><b>❗️ਨੋਟ: ਕਾਪੀਰਾਈਟ ਮੁੱਦਿਆਂ ਦੇ ਕਾਰਨ ਫਾਈਲ ਨੂੰ 5 ਮਿੰਟਾਂ ਵਿੱਚ ਡਿਲੀਟ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਡਿਲੀਟ ਹੋਣ ਤੌ ਪਹਿਲਾਂ ਫਾਈਲ ਨੂੰ SAVED MESSAGES ਵਿੱਚ ਜਾ ਆਪਣੇ ਦੋਸਤ ਨੂੰ ਭੇਜ ਲਵੋ।</b></i>\n<i><b>(❗️ɴᴏᴛᴇ: ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 5 ᴍɪɴᴜᴛᴇs. ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ ғᴏʀᴡᴀʀᴅ ᴛʜᴇ ғɪʟᴇ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴏʀ ғʀɪᴇɴᴅ/ғᴀᴍɪʟʏ)</b></i>\n\n<b>╭─── • ❰ 𝗝𝗢𝗜𝗡  𝗛𝗘𝗥𝗘 ❱ • ──➣\n┣ <b><I>@PB_CinemaXpro</i></b>\n╰───── • ◆ • ──────➣</b>',
                         protect_content=True if ident == "filep" else False 
                     )
                     msg1 = await query.message.reply(
-                    f'<b>🤠 𝗛𝗶 {query.from_user.mention} 💿 𝗬𝗼𝘂𝗿 𝗙𝗜𝗟𝗠 𝗶𝘀 𝗥𝗲𝗮𝗱𝘆‼️ 💿\n\n'
-                    f'<b>🔖 𝗡𝗔𝗠𝗘 : </b><code>{title}</code>\n'
-                    f'<b>💾 𝗦𝗜𝗭𝗘 :</b> {size}\n\n'
-                    f'<b>🚦 𝗔𝘂𝘁𝗼 𝗗𝗲𝗹𝗲𝘁𝗲𝘀 𝗶𝗻 5⃣ 𝗠𝗶𝗻 🚦</b>',
+                    f'<b>ʜɪ👋🙂 {query.from_user.mention} 💿ਤੁਹਾਡੀ ਫਿਲਮ ਤਿਆਰ ਹੈ(ʏᴏᴜʀ ғɪʟᴍ ɪs ʀᴇᴀᴅʏ)‼️\n\n'
+                    f'<b>🔖 ɴᴀᴍᴇ: </b><code>{title}</code>\n'
+                    f'<b>💾 sɪᴢᴇ:</b> {size}\n\n'
+                    f'<b>⚠️ਪੰਜ ਮਿੰਟਾਂ ਵਿੱਚ ਫਾਈਲ ਆਪਣੇ ਆਪ ਡਿਲੀਟ ਹੋ ਜਾਵੇਗੀ❗️</b>\n'
+                    f'<b>(ғɪʟᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴs)</b>',
                     True,
                     'html',
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("1️⃣ 𝗙𝗜𝗥𝗦𝗧 𝗝𝗢𝗜𝗡", url = f"{CH_LINK}")
+                                InlineKeyboardButton("ਪਹਿਲਾਂ ਸ਼ਾਮਲ ਹੋਵੋ(ғɪʀsᴛ ᴊᴏɪɴ)", url = f"{CH_LINK}")
                             ],
                             [
-                               InlineKeyboardButton("2️⃣ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 ", url = ms.link) 
+                               InlineKeyboardButton("ਡਾਊਨਲੋਡ ਕਰੋ(ᴅᴏᴡɴʟᴏᴀᴅ)", url = ms.link) 
                             ]
                         ]
                     )
-                )
-                await query.answer('👻 Click on the Buttons Below For File 👻',show_alert=True)
+                )               
                 await asyncio.sleep(300)
                 await msg1.delete()            
                 await ms.delete()
@@ -405,7 +405,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 logger.exception(e, exc_info=True)
                 await query.answer(f"Encountering Issues", True)
 
-    query.data.startswith("checksub"):
+    elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
             await query.answer("<b>ਮੈਨੂੰ ਤੁਹਾਡੀ ਚੁਸਤੀ ਪਸੰਦ ਹੈ, ਪਰ ਜ਼ਿਆਦਾ ਸਮਾਰਟ ਨਾ ਬਣੋ 😂 (ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss, ʙᴜᴛ ᴅᴏɴ'ᴛ ʙᴇ ᴏᴠᴇʀsᴍᴀʀᴛ​)😂</b>", show_alert=True)
             return
