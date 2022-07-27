@@ -353,21 +353,39 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                ms = await client.send_cached_media(
-                    chat_id=query.from_user.id,
-                    file_id=file_id,
-                    caption= f'<b>🤠 𝗛𝗶 {query.from_user.mention}</b>\n\n<b>🔖 𝗡𝗔𝗠𝗘 :</b><code> {title}</code>\n\n<b>💾 𝗦𝗜𝗭𝗘 :</b> {size}\n\n<i>❕Note : Due to copyright issues the file will be deleted in 5 Minutes. make sure to forward the file to your SAVED MESSAGES</i>\n\n<b>╭─── • ❰ 𝗝𝗢𝗜𝗡  𝗛𝗘𝗥𝗘 ❱ • ──➣\n┣ @PB_CinemaXpro\n╰───── • ◆ • ──────➣</b>',
-                    protect_content=True if ident == "filep" else False 
+                    ms = await client.send_cached_media(
+                        chat_id=CH_FILTER,
+                        file_id=file_id,
+                        caption=f'<b>🤠 𝗛𝗶 {query.from_user.mention}</b>\n\n<b>🔖 𝗡𝗔𝗠𝗘 :</b><code> {title}</code>\n\n<b>💾 𝗦𝗜𝗭𝗘 :</b> {size}\n\n<i>❕Note : Due to copyright issues the file will be deleted in 5 Minutes. make sure to forward the file to your SAVED MESSAGES</i>\n\n<b>╭─── • ❰ 𝗝𝗢𝗜𝗡  𝗛𝗘𝗥𝗘 ❱ • ──➣\n┣ \n╰───── • ◆ • ──────➣</b>',
+                        protect_content=True if ident == "filep" else False 
+                    )
+                    msg1 = await query.message.reply(
+                    f'<b>🤠 𝗛𝗶 {query.from_user.mention} 💿 𝗬𝗼𝘂𝗿 𝗙𝗜𝗟𝗠 𝗶𝘀 𝗥𝗲𝗮𝗱𝘆‼️ 💿\n\n'
+                    f'<b>🔖 𝗡𝗔𝗠𝗘 : </b><code>{title}</code>\n'
+                    f'<b>💾 𝗦𝗜𝗭𝗘 :</b> {size}\n\n'
+                    f'<b>🚦 𝗔𝘂𝘁𝗼 𝗗𝗲𝗹𝗲𝘁𝗲𝘀 𝗶𝗻 5⃣ 𝗠𝗶𝗻 🚦</b>',
+                    True,
+                    'html',
+                    disable_web_page_preview=True,
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton("1️⃣ 𝗙𝗜𝗥𝗦𝗧 𝗝𝗢𝗜𝗡", url = f"{CH_LINK}")
+                            ],
+                            [
+                               InlineKeyboardButton("2️⃣ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 ", url = ms.link) 
+                            ]
+                        ]
+                    )
                 )
-                await query.answer('Check PM, I have sent files in pm', show_alert=True)
-        except UserIsBlocked:
-            await query.answer('Unblock the bot mahn !', show_alert=True)
-        except PeerIdInvalid:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-        except Exception as e:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-            await asyncio.sleep(6)                           
-            await ms.delete()
+                await query.answer('👻 Click on the Buttons Below For File 👻',show_alert=True)
+                await asyncio.sleep(300)
+                await msg1.delete()            
+                await ms.delete()
+                del msg1, ms
+            except Exception as e:
+                logger.exception(e, exc_info=True)
+                await query.answer(f"Encountering Issues", True)
            
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
