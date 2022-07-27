@@ -405,14 +405,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 logger.exception(e, exc_info=True)
                 await query.answer(f"Encountering Issues", True)
 
-    elif query.data.startswith("checksub"):
+    query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒 Join @HYBRID_Movies for access", show_alert=True)
+            await query.answer("<b>ਮੈਨੂੰ ਤੁਹਾਡੀ ਚੁਸਤੀ ਪਸੰਦ ਹੈ, ਪਰ ਜ਼ਿਆਦਾ ਸਮਾਰਟ ਨਾ ਬਣੋ 😂 (ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss, ʙᴜᴛ ᴅᴏɴ'ᴛ ʙᴇ ᴏᴠᴇʀsᴍᴀʀᴛ​)😂</b>", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            return await query.answer('No such file exist.')
+            return await query.answer('<b>ਅਜਿਹੀ ਕੋਈ ਫਾਈਲ ਮੌਜੂਦ ਨਹੀਂ ਹੈ 🥲(ɴᴏ sᴜᴄʜ ꜰɪʟᴇ ᴇxɪsᴛ​🥲)</b>.')
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -428,8 +428,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         await query.answer()
-        ms = await client.send_cached_media(
-            chat_id=CH_FILTER,
+        await client.send_cached_media(
+            chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
