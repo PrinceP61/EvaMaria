@@ -41,14 +41,14 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("🙂", show_alert=True)
     try:
         offset = int(offset)
     except:
         offset = 0
     search = BUTTONS.get(key)
     if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+        await query.answer("ਤੁਸੀਂ ਮੇਰੇ ਪੁਰਾਣੇ ਸੰਦੇਸ਼ਾਂ ਵਿੱਚੋਂ ਇੱਕ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਬੇਨਤੀ ਭੇਜੋ.\n (ʏᴏᴜ ᴀʀᴇ ᴜsɪɴɢ ᴏɴᴇ ᴏғ ᴍʏ ᴏʟᴅ ᴍᴇssᴀɢᴇs, ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴛʜᴇ ʀᴇǫᴜᴇsᴛ ᴀɢᴀɪɴ.)", show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -120,14 +120,14 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("🔍 𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗿 𝗢𝗪𝗡 𝗙𝗶𝗹𝗲𝘀 𝗕𝗿𝗼...", show_alert=True)
+        return await query.answer("🔍 ਆਪਣੀ ਖੁਦ ਦੀ ਫਾਈਲ ਖੋਜੋ…\n(🔍 sᴇᴀʀᴄʜ ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ ʙʀᴜʜ…)", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
     if not movies:
-        return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
+        return await query.answer("ਤੁਸੀਂ ਇੱਕ ਪੁਰਾਣੇ ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰ ਰਹੇ ਹੋ ਜਿਸਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ ਹੈ।\n (ʏᴏᴜ ᴀʀᴇ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴀɴ ᴏʟᴅ ʙᴜᴛᴛᴏɴ ᴡʜɪᴄʜ ɪs ᴇxᴘɪʀᴇᴅ.)", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Checking for Movie in database...')
+    await query.answer('ਡਾਟਾਬੇਸ ਵਿੱਚ ਮੂਵੀ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ.../n (ᴄʜᴇᴄᴋɪɴɢ ғᴏʀ ᴍᴏᴠɪᴇ ɪɴ ᴅᴀᴛᴀʙᴀsᴇ...)')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -156,10 +156,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat = await client.get_chat(grpid)
                     title = chat.title
                 except:
-                    await query.message.edit_text("<b>ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਮੈਂ ਤੁਹਾਡੇ ਸਮੂਹ ਵਿੱਚ ਹਾਜ਼ਰ ਹਾਂ!</b>\n<b>(ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴘʀᴇsᴇɴᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ!)</b>", quote=True)         
+                    await query.message.edit_text("ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਮੈਂ ਤੁਹਾਡੇ ਸਮੂਹ ਵਿੱਚ ਹਾਜ਼ਰ ਹਾਂ!\n(ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴘʀᴇsᴇɴᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ!)", quote=True)         
             else:
                 await query.message.edit_text(
-                    "I'm not connected to any groups!\nCheck /connections or connect to any groups",
+                    "❗️ਮੈਂ ਕਿਸੇ ਸਮੂਹ ਨਾਲ ਜੁੜਿਆ ਨਹੀਂ ਹਾਂ! /connections ਦੀ ਜਾਂਚ ਕਰੋ ਜਾਂ ਕਿਸੇ ਵੀ ਸਮੂਹ ਨਾਲ ਜੋੜੋ। \n ❗️I'm not connected to any groups!Check /connections or connect to any groups",
                     quote=True
                 )
 
@@ -172,7 +172,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if (st.status == "creator") or (str(userid) in ADMINS):
             await del_all(query.message, grp_id, title)
         else:
-            await query.answer("You need to be Group Owner or an Auth User to do that!", show_alert=True)
+            await query.answer("⚠️ਅਜਿਹਾ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਸਮੂਹ ਦੇ ਮਾਲਕ ਜਾਂ ਪ੍ਰਮਾਣਿਤ ਉਪਭੋਗਤਾ ਹੋਣ ਦੀ ਲੋੜ ਹੈ!(⚠️ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀ ᴏʀ ᴀɴ ᴀᴜᴛʜ ᴜsᴇʀ ᴛᴏ ᴅᴏ ᴛʜᴀᴛ!)", show_alert=True)
     elif query.data == "delallcancel":
         userid = query.from_user.id
         chat_type = query.message.chat.type
@@ -191,7 +191,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("<b>ਇਹ ਤੁਹਾਡੇ ਲਈ ਨਹੀਂ ਹੈ!</b>\n<b>(ᴛʜᴀᴛ's ɴᴏᴛ ꜰᴏʀ ʏᴏᴜ!)</b>", show_alert=True)
+                await query.answer("ਇਹ ਤੁਹਾਡੇ ਲਈ ਨਹੀਂ ਹੈ!\n(ᴛʜᴀᴛ's ɴᴏᴛ ꜰᴏʀ ʏᴏᴜ!)", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -239,7 +239,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode="md"
             )
         else:
-            await query.message.edit_text('Some error occurred!!', parse_mode="md") 
+            await query.message.edit_text('ਕੁਝ ਗਲਤੀ ਹੋ ਗਈ !!/n(sᴏᴍᴇ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ!!)', parse_mode="md") 
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -259,7 +259,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text(
-                f"Some error occurred!!",
+                f"ਕੁਝ ਗਲਤੀ ਹੋ ਗਈ !!/n(sᴏᴍᴇ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ!!)",
                 parse_mode="md"
             )
     elif "deletecb" in query.data:
@@ -272,11 +272,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if delcon:
             await query.message.edit_text(
-                "Successfully deleted connection"
+                "ਕਨੈਕਸ਼ਨ ਨੂੰ ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਇਆ ਗਿਆ/n(sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴄᴏɴɴᴇᴄᴛɪᴏɴ)"
             )
         else:
             await query.message.edit_text(
-                f"Some error occurred!!",
+                f"ਕੁਝ ਗਲਤੀ ਹੋ ਗਈ !!/n(sᴏᴍᴇ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ!!)",
                 parse_mode="md"
             )
     elif query.data == "backcb":
@@ -287,7 +287,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         groupids = await all_connections(str(userid))
         if groupids is None:
             await query.message.edit_text(
-                "There are no active connections!! Connect to some groups first.",
+                "ਕੋਈ ਮੌਜੂਦਾ ਕਨੈਕਸ਼ਨ ਨਹੀਂ ਹੈ !! ਪਹਿਲਾਂ ਕੁਝ ਸਮੂਹਾਂ ਨਾਲ ਜੋੜੋ।/n (ᴛʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴀᴄᴛɪᴠᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴs!! ᴄᴏɴɴᴇᴄᴛ ᴛᴏ sᴏᴍᴇ ɢʀᴏᴜᴘs ғɪʀsᴛ.)",
             )
         buttons = []
         for groupid in groupids:
@@ -331,7 +331,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             files_ = await get_file_details(file_id)
             if not files_:
-                return await query.answer('No such file exist.')
+                return await query.answer('ਅਜਿਹੀ ਕੋਈ ਫਾਈਲ ਮੌਜੂਦ ਨਹੀਂ ਹੈ🥲\n(ɴᴏ sᴜᴄʜ ꜰɪʟᴇ ᴇxɪsᴛ​🥲).')
             files = files_[0]
             title = files.file_name
             size = get_size(files.file_size)
