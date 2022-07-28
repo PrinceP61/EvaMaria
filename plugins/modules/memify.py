@@ -4,12 +4,12 @@ import textwrap
 
 import os
 
-from plugins.modules import register
+from Plugins.modules import register
 
-from plugins.modules import LOGGER
+from Plugins.modules import LOGGER
 
 
-from plugins.modules import telethn as bot
+from Plugins.modules import telethn as bot
 
 
 @register(pattern="^/mmf ?(.*)")
