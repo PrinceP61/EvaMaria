@@ -10,6 +10,14 @@ from Python_ARQ import ARQ
 from pyrogram import Client, errors
 from os import environ
 
+LOGGER = logging.getLogger(__name__)
+
+# if version < 3.6, stop bot.
+if sys.version_info[0] < 3 or sys.version_info[1] < 6:
+    LOGGER.error(
+        "You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
+    )
+    quit(1)
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
