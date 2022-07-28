@@ -702,7 +702,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('𝗟𝗢𝗔𝗗𝗜𝗡𝗚……..')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -731,8 +730,8 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
-                ),
+                    text=f"{get_size(file.file_size)}!{file.file_name}", callback_data=f'files#{file.file_id}'
+                )
             ]
             for file in files
         ]
@@ -740,13 +739,8 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}",
-                    callback_data=f'{pre}#{file.file_id}',
-                ),
-                InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}",
-                    callback_data=f'{pre}#{file.file_id}',
-                ),
+                    text=f"{get_size(file.file_size)}!{file.file_name}", callback_data=f'files#{file.file_id}'
+                )
             ]
             for file in files
         ]
@@ -757,7 +751,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="⇨", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
@@ -828,7 +822,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਮ ਦੀ ਕੋਈ ਫ਼ਿਲਮ ਨਹੀਂ ਮਿਲੀ..\n (ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ..)</b>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -857,7 +851,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        k = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸਬੰਧਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ। ਆਪਣੇ ਸਪੈਲਿੰਗ ਦੀ ਜਾਂਚ ਕਰੋ..\n (ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ. ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ..)</b>")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -869,7 +863,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸੰਬੰਧਿਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ, ਕੀ ਤੁਹਾਡਾ ਮਤਲਬ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਸੀ?☼☺\n.( ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ,ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏғ ᴛʜᴇsᴇ?☼☺)</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
