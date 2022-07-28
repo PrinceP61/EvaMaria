@@ -8,7 +8,7 @@ from Plugins.events import register
 
 from info import LOGGER, TEMP_DOWNLOAD_DIRECTORY
 
-from info import telethn as bot
+from telethon import TelegramClient
 
 
 @register(pattern="^/mmf ?(.*)")
