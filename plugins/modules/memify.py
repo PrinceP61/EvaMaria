@@ -6,8 +6,7 @@ import os
 
 from Plugins.events import register
 
-from plugins import LOGGER
-
+from info import LOGGER, TEMP_DOWNLOAD_DIRECTORY
 
 from info import telethn as bot
 
