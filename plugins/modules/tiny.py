@@ -2,7 +2,7 @@ import os
 import cv2
 from PIL import Image
 from EvaMaria.events import register
-from import telethn as tbot
+from info import telethn as tbot
 
 
 @register(pattern="^/tiny ?(.*)")
