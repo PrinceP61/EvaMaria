@@ -1,6 +1,6 @@
 import os
 from PIL import Image
-from Plugins.events import register
+from Pb.events import register
 from info import telethn as tbot
 
 
