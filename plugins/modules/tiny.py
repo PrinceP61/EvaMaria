@@ -1,6 +1,6 @@
 import os
 from PIL import Image
-from EvaMaria.events import register
+from plugins.events import register
 from info import telethn as tbot
 
 
