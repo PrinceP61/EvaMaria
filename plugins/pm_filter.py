@@ -803,18 +803,18 @@ async def auto_filter(client, msg, spoll=False):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
             await message.delete()
             await hmm.delete()          
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
             await message.delete()
             await fek.delete()           
     else:
         fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(10)
+        await asyncio.sleep(300)
         await message.delete()
         await fuk.delete()
 
@@ -869,9 +869,10 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸੰਬੰਧਿਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ, ਕੀ ਤੁਹਾਡਾ ਮਤਲਬ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਸੀ?☼☺\n.( ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ,ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏғ ᴛʜᴇsᴇ?☼☺)</b>",
+    pb = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸੰਬੰਧਿਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ, ਕੀ ਤੁਹਾਡਾ ਮਤਲਬ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਸੀ?☼☺\n.( ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ,ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏғ ᴛʜᴇsᴇ?☼☺)</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
-
+    await asyncio.sleep(8)
+        await pb.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
