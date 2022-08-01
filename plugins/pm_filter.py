@@ -796,7 +796,7 @@ async def auto_filter(client, msg, spoll=False):
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
             await message.delete()
             await hehe.delete()            
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
@@ -830,6 +830,7 @@ async def advantage_spell_chok(msg):
     if not g_s:
         k = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਮ ਦੀ ਕੋਈ ਫ਼ਿਲਮ ਨਹੀਂ ਮਿਲੀ..\n (ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ..)</b>")
         await asyncio.sleep(8)
+        await message.delete()
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -859,6 +860,7 @@ async def advantage_spell_chok(msg):
     if not movielist:
         k = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸਬੰਧਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ। ਆਪਣੇ ਸਪੈਲਿੰਗ ਦੀ ਜਾਂਚ ਕਰੋ..\n (ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ. ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ..)</b>")
         await asyncio.sleep(8)
+        await message.delete()
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
@@ -872,6 +874,7 @@ async def advantage_spell_chok(msg):
     pb = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸੰਬੰਧਿਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ, ਕੀ ਤੁਹਾਡਾ ਮਤਲਬ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਸੀ?☼☺\n.( ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ,ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏғ ᴛʜᴇsᴇ?☼☺)</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(8)
+    await message.delete()
     await pb.delete()
 
 async def manual_filters(client, message, text=False):
