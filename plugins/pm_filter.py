@@ -872,7 +872,7 @@ async def advantage_spell_chok(msg):
     pb = await msg.reply("<b>ਮੈਨੂੰ ਇਸ ਨਾਲ ਸੰਬੰਧਿਤ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ, ਕੀ ਤੁਹਾਡਾ ਮਤਲਬ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਸੀ?☼☺\n.( ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ,ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏғ ᴛʜᴇsᴇ?☼☺)</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(8)
-        await pb.delete()
+    await pb.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
