@@ -3,11 +3,6 @@ import logging
 import os
 import sys
 import time
-
-import telegram.ext as tg
-from aiohttp import ClientSession
-from Python_ARQ import ARQ
-from pyrogram import Client, errors
 from os import environ
 
 LOGGER = logging.getLogger(__name__)
