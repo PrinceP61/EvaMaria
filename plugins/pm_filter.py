@@ -361,15 +361,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ms = await client.send_cached_media(
                         chat_id=CH_FILTER,
                         file_id=file_id,
-                        caption=f'<b> ʜɪ👋🙂 {query.from_user.mention}</b>\n<b>🔖 ɴᴀᴍᴇ:</b> {f_caption}\n<b>💾 sɪᴢᴇ:</b> {size}',
+                        caption=f'<b> ʜɪ👋🙂 {query.from_user.mention}</b>\n<b>🔖 ɴᴀᴍᴇ:</b> <b>{f_caption}</b>',
                         protect_content=True if ident == "filep" else False 
                     )
                     msg1 = await query.message.reply(
                     f'<b>ʜɪ👋🙂 {query.from_user.mention} 💿ਤੁਹਾਡੀ ਫਿਲਮ ਤਿਆਰ ਹੈ\n(ʏᴏᴜʀ ғɪʟᴍ ɪs ʀᴇᴀᴅʏ)‼️\n\n'
                     f'<b>🔖 ɴᴀᴍᴇ: </b><b>{f_caption}</b>\n'
                     f'<b>💾 sɪᴢᴇ:</b> {size}\n\n'
-                    f'<b>⚠️ਦੱਸ ਮਿੰਟਾਂ ਵਿੱਚ ਫਾਈਲ ਆਪਣੇ ਆਪ ਡਿਲੀਟ ਹੋ ਜਾਵੇਗੀ❗️</b>\n'
-                    f'<b>(ғɪʟᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ɪɴ 10 ᴍɪɴs)</b>',
+                    f'<b>⚠️5 ਮਿੰਟਾਂ ਵਿੱਚ ਫਾਈਲ ਆਪਣੇ ਆਪ ਡਿਲੀਟ ਹੋ ਜਾਵੇਗੀ❗️</b>\n'
+                    f'<b>(ғɪʟᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴs)</b>',
                     True,
                     enums.ParseMode.HTML,
                     disable_web_page_preview=True,
@@ -384,7 +384,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ]
                     )
                 )               
-                await asyncio.sleep(600)
+                await asyncio.sleep(300)
                 await msg1.delete()            
                 await ms.delete()
                 del msg1, ms
