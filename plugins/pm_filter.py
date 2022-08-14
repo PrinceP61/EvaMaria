@@ -371,7 +371,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f'<b>⚠️ਪੰਜ ਮਿੰਟਾਂ ਵਿੱਚ ਫਾਈਲ ਆਪਣੇ ਆਪ ਡਿਲੀਟ ਹੋ ਜਾਵੇਗੀ❗️</b>\n'
                     f'<b>(ғɪʟᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴs)</b>',
                     True,
-                    'html',
+                    enums.ParseMode.HTML,
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(
                         [
