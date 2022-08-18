@@ -368,9 +368,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             except UserIsBlocked:
                 await query.answer('Unblock the bot mahn !', show_alert=True)
             except PeerIdInvalid:
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                await query.answer(url=f"https://earn4link.in/st?api=14bf082db3caa5fa0be9baa1a46e2fc44d17a2bd&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
             except Exception as e:
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")                
+                await query.answer(url=f"https://earn4link.in/st?api=14bf082db3caa5fa0be9baa1a46e2fc44d17a2bd&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")                
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
             await query.answer("<b>ਮੈਨੂੰ ਤੁਹਾਡੀ ਚੁਸਤੀ ਪਸੰਦ ਹੈ, ਪਰ ਜ਼ਿਆਦਾ ਸਮਾਰਟ ਨਾ ਬਣੋ 😂</b>\n<b>(ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss, ʙᴜᴛ ᴅᴏɴ'ᴛ ʙᴇ ᴏᴠᴇʀsᴍᴀʀᴛ​)😂</b>", show_alert=True)
