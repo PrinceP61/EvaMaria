@@ -356,41 +356,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     return
                 elif settings['botpm']:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-                    return
-                else:
-                    ms = await client.send_cached_media(
-                        chat_id=CH_FILTER,
-                        file_id=file_id,
-                        caption=f'<b> ʜɪ👋🙂 {query.from_user.mention}</b>\n<b>🔖 ɴᴀᴍᴇ:</b> <b>{f_caption}</b>',
-                        protect_content=True if ident == "filep" else False 
-                    )
-                    msg1 = await query.message.reply(
-                    f'<b>ʜɪ👋🙂 {query.from_user.mention} 💿ਤੁਹਾਡੀ ਫਿਲਮ ਤਿਆਰ ਹੈ\n(ʏᴏᴜʀ ғɪʟᴍ ɪs ʀᴇᴀᴅʏ)‼️\n\n'
-                    f'<b>🔖 ɴᴀᴍᴇ: </b><b>{f_caption}</b>\n'
-                    f'<b>💾 sɪᴢᴇ:</b> {size}\n\n'
-                    f'<b>⚠️5 ਮਿੰਟਾਂ ਵਿੱਚ ਫਾਈਲ ਆਪਣੇ ਆਪ ਡਿਲੀਟ ਹੋ ਜਾਵੇਗੀ❗️</b>\n'
-                    f'<b>(ғɪʟᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ɪɴ 5 ᴍɪɴs)</b>',
-                    True,
-                    enums.ParseMode.HTML,
-                    disable_web_page_preview=True,
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("ਪਹਿਲਾਂ ਸ਼ਾਮਲ ਹੋਵੋ(ғɪʀsᴛ ᴊᴏɪɴ)", url = f"{CH_LINK}")
-                            ],
-                            [
-                               InlineKeyboardButton("ਡਾਊਨਲੋਡ ਕਰੋ(ᴅᴏᴡɴʟᴏᴀᴅ)", url = ms.link) 
-                            ]
-                        ]
-                    )
-                )               
-                await asyncio.sleep(300)
-                await msg1.delete()            
-                await ms.delete()
-                del msg1, ms
-            except Exception as e:
-                logger.exception(e, exc_info=True)
-                await query.answer(f"ਕੁੱਝ ਗੜਬੜ ਹੈ", True)
+                    return                
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
             await query.answer("<b>ਮੈਨੂੰ ਤੁਹਾਡੀ ਚੁਸਤੀ ਪਸੰਦ ਹੈ, ਪਰ ਜ਼ਿਆਦਾ ਸਮਾਰਟ ਨਾ ਬਣੋ 😂</b>\n<b>(ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss, ʙᴜᴛ ᴅᴏɴ'ᴛ ʙᴇ ᴏᴠᴇʀsᴍᴀʀᴛ​)😂</b>", show_alert=True)
