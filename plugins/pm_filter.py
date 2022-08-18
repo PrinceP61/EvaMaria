@@ -64,7 +64,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}⇥{file.file_name}", callback_data= url=f"https://earn4link.in/st?api=14bf082db3caa5fa0be9baa1a46e2fc44d17a2bd&url={file.file_id}'
+                    text=f"{get_size(file.file_size)}⇥{file.file_name}", callback_data=url=f"https://earn4link.in/st?api=14bf082db3caa5fa0be9baa1a46e2fc44d17a2bd&url={file.file_id}'
                 ),
             ]
             for file in files
